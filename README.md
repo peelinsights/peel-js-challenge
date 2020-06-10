@@ -1,3 +1,4 @@
+<img src="https://app.peelinsights.com/cdn/img/peel_black.svg" width=200>
 
 ## Instruction for completing and submitting the challenge:
 
@@ -16,7 +17,53 @@ Most times at Peel our web app has to deal with incredible big amounts of data t
 
 
 ### API
+http://app.peelinsights.com/api/test_stats/
 
+This API calculates revenue for our demo project and it returns maximum the last 10 days, although it allows pagination through `?=cursor` so you can keep getting previous days. The response also includes the `next_cursor` you should use.
+Beware this API is been throttled to 20 requests per minute, consider that and any other bugs within your implementation. If you app gets throtlled you can look for the hold time in the headers with `Retry-After`.
+
+Note: For extra bonus work, you can attach `group_by` with either `week`, `month` or `quarter`. Consider adding a UI for this if you plan to do the bonus work.
+
+JSON Response Example
+```
+{
+	"count": 10,
+	"results": {
+		"all": [{
+			"ds": "2020-06-07",
+			"y": 31623.22
+		}, {
+			"ds": "2020-06-06",
+			"y": 31260.77
+		}, {
+			"ds": "2020-06-05",
+			"y": 27953.93
+		}, {
+			"ds": "2020-06-04",
+			"y": 25717.45
+		}, {
+			"ds": "2020-06-03",
+			"y": 28496.04
+		}, {
+			"ds": "2020-06-02",
+			"y": 28634.9
+		}, {
+			"ds": "2020-06-01",
+			"y": 30592.73
+		}, {
+			"ds": "2020-05-31",
+			"y": 30815.36
+		}, {
+			"ds": "2020-05-30",
+			"y": 28315.92
+		}, {
+			"ds": "2020-05-29",
+			"y": 25794.78
+		}]
+	},
+	"next_cursor": 10
+}
+```
 
 
 ### DESIGNS
