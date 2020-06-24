@@ -82,7 +82,7 @@ There are a few rules that we would like you to follow during your code challeng
   - Take care of mobile devices and make sure that your project works on smaller resolution screens.
   - Work closely with the design, try to implement it as accurately as possible.
 
-For sharing purposes please create a **new GitHub repo**, deploy your project to the **GitHub pages** and provide the link to the repo.
+For sharing purposes please create a **new GitHub repo**, deploy your project to the **GitHub pages** and provide the link to the repo and the website, if you don't feel like deploying to Github pages, please let us know in the repo if there is anything special to run the project.
 
 Your submission should also include a readme file, where you can document your work, describe the features and the architectural decisions that you made. Feel free to share there your thoughts about the challenges that you faced implementing this code.
 
