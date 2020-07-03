@@ -1,3 +1,9 @@
+// ========================================================================================
+/*                                                                                      *
+ * REDUCER: Store                                                                        *
+ *                                                                                      */
+// ========================================================================================
+
 import {applyMiddleware,createStore} from 'redux';
 import {createWrapper} from 'next-redux-wrapper';
 import thunkMiddleware from 'redux-thunk';

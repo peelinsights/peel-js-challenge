@@ -1,4 +1,9 @@
-// reducer.js
+// ========================================================================================
+/*                                                                                      *
+ * REDUCER: Stack                                                                        *
+ *                                                                                      */
+// ========================================================================================
+
 import {HYDRATE} from 'next-redux-wrapper';
 import {PUSH_STACK_SUCCESS,PUSH_STACK_ERROR, CLEAN_STACK_ERROR,POP_STACK } from '@actions';
 import initialState from '@store/initialState'
@@ -22,8 +27,6 @@ export function stackReducer(state = initialState.stack, action) {
         case POP_STACK:
             const  { [action.key]: value, ...remainingSuccess } = state.success;
             const  { [action.key]: err, ...remainingError } = state.error;
-
-            console.log('POP_STACK',action.key)
             return {...state, 
                 success : remainingSuccess,
                 error :remainingError
