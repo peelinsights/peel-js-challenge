@@ -7,7 +7,7 @@ import initialState from '@store/initialState'
 export function statsReducer(state = initialState.stats, action) {
     switch(action.type) {
         case HYDRATE:
-            return {...state, ...action.payload};
+            return {...state, ...action.payload.stats};
         case FETCH_STATS_PENDING: 
             return {
                 ...state,
@@ -17,7 +17,7 @@ export function statsReducer(state = initialState.stats, action) {
             return {
                 ...state,
                 pending: false,
-                count: action.count,
+                count: state.count + action.count,
                 next_cursor: action.next_cursor,
                 data : state.data ? [...state.data,...action.data] : action.data
             }

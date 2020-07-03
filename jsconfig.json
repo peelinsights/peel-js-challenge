@@ -8,7 +8,9 @@
       "@reducres/*": ["./src/redux/reducers/*"],
       "@store/*": ["./src/redux/store/*"],
       "@services/*": ["./src/services/*"],
+      "@constants/*": ["./src/constants/*"],
       "@hooks/*": ["./src/hooks/*"],
+      "@util/*": ["./src/util/*"],
     }
   },
   "exclude": ["node_modules", ".next", "config", "public"]

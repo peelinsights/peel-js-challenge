@@ -14,7 +14,11 @@
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
     "react-scripts": "3.4.1",
-    "redux-thunk": "^2.3.0"
+    "react-window": "^1.8.5",
+    "react-window-infinite-loader": "^1.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0",
+    "swr": "^0.2.3"
   },
   "scripts": {
     "dev": "export ENV=dev && next dev",

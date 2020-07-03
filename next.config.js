@@ -18,6 +18,8 @@ module.exports = ({
       '@store': path.resolve(__dirname, 'src/redux/store'),
       '@services': path.resolve(__dirname, 'src/services'),
       '@hooks': path.resolve(__dirname, 'src/hooks'),
+      '@util': path.resolve(__dirname, 'src/util'),
+      '@constants': path.resolve(__dirname, 'src/constants'),
     };
 
     return config;

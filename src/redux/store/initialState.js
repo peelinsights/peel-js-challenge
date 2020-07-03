@@ -6,5 +6,14 @@ export default {
         next_cursor: 0,
         data: null,
         error: null
-    }
+    },
+    stack: {
+        stack_cursor:0,
+        error : {
+
+        },
+        success : {
+
+        }
+    },
 }

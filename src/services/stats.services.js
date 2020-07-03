@@ -8,7 +8,6 @@ const config = {
 }
 
 export default async (next_cursor) => {
-  console.log(`${REACT_APP_ROOT[ENV]}/test_stats/?cursor=${next_cursor}`)
   try{
   const response = await axios.get(
     `${REACT_APP_ROOT[ENV]}/test_stats/?cursor=${next_cursor}`, config
@@ -16,7 +15,6 @@ export default async (next_cursor) => {
   return response.data;
 }
 catch(error){
-    console.log(error)
     throw error
 }
 }
