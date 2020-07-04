@@ -20,6 +20,12 @@ module.exports = ({
       '@hooks': path.resolve(__dirname, 'src/hooks'),
       '@util': path.resolve(__dirname, 'src/util'),
       '@constants': path.resolve(__dirname, 'src/constants'),
+      '@components': path.resolve(__dirname, 'src/components'),
+      '@display': path.resolve(__dirname, 'src/components/display'),
+      '@atoms': path.resolve(__dirname, 'src/components/atoms'),
+      '@molecules': path.resolve(__dirname, 'src/components/molecules'),
+      '@organisms': path.resolve(__dirname, 'src/components/organisms'),
+      '@styles': path.resolve(__dirname, 'src/styles'),
     };
 
     return config;

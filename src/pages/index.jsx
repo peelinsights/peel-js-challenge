@@ -13,13 +13,15 @@ import InfiniteLoader from "react-window-infinite-loader";
 import {useFetchStats} from '@hooks/useFetchStats.hooks'
 import statsService from '@services/stats.services'
 import {INITIAL_STATS_AMOUNT,AMOUNT_PER_FETCH} from '@constants/'
-import { pushStackSuccess,pushStackError} from '@actions';
+import { pushStackSuccess} from '@actions';
 import {wrapper} from '@store';
 import createCounter from '@util/createCounter.util'
 import { LOADING_VALUE } from '@constants/';
 
 // * Styles
 
+import {Text,Flex,Box} from '@display/'
+import theme from '@styles/theme';
 // * Display/UI
 
 const StatsView = (props) => {
@@ -31,24 +33,28 @@ const StatsView = (props) => {
     const Row =  ({ index, style }) => {
         const {ds,y} = data[index]
         return (
-          <div className="ListItem" style={style} >
-           <div style={{
-              height: "30px",
-              display:'flex' , 
-              width:'100%',
-              lineHeight: '30px',
-              justifyContent: 'space-around'
-              }}>
-                 
-                    <h5 style={{color:'purple'}}>{index}</h5>
-                    <h5 style={{color:'blue'}}>{ds===LOADING_VALUE?'Loading...':ds}</h5>
-                    <h5 style={{color:'green'}}>{`$${y===LOADING_VALUE?'Loading...':y}`}</h5>
-          </div>
-          </div>
+          <Flex className="ListItem" style={style} backgroundColor={theme.colors.white} justifyContent='center'>
+              <Flex justifyContent='space-between' alignItems='center' width='824px'>
+                  <Flex flexDirection='column' justifyContent='space-between'>
+                    <Text variant={{ _: 'subhead2Mobile', m: 'subhead2' }} color={index===0?theme.colors.supernova:theme.colors.black} >{ds===LOADING_VALUE?'Loading...':index===0?'Today':ds}</Text>
+                    <Text variant={{ _: 'subhead2AltMobile', m: 'subhead2Alt' }} >Overview</Text>
+                </Flex>
+                    <Text variant={{ _: 'h8Mobile', m: 'h8' }} >{`$${y===LOADING_VALUE?'Loading...':y}`}</Text>
+              </Flex>
+          </Flex>
         );
       }
         return (
-            <div>
+            <Flex 
+                flexDirection='column'
+                backgroundColor={theme.colors.zircon}
+                justifyContent='space-between'
+                alignItems='center'
+                height='100vh'
+                width='100vw'
+            >
+                <Text variant={{ _: 'h2Mobile', m: 'h2' }}  >Revenue Data</Text>
+                <Text variant={{ _: 'subhead2Mobile', m: 'subhead2' }}>Showing all data</Text>
                 <InfiniteLoader
                     isItemLoaded={isItemLoaded}
                     itemCount={10000}
@@ -57,18 +63,20 @@ const StatsView = (props) => {
                     {({ onItemsRendered, ref }) => (
                     <List
                         className="List"
-                        height={1000}
+                        height={800}
                         itemCount={count}
-                        itemSize={50}
+                        itemSize={88}
                         onItemsRendered={onItemsRendered}
                         ref={ref}
-                        width={300}
+                        width={1118} 
                     >
                         {Row}
                     </List>
                     )}
                 </InfiniteLoader>
-            </div>)
+            </Flex>
+
+           )
 }
 
 

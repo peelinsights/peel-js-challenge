@@ -34,9 +34,7 @@ import { fetchStatsPending, fetchStatsSuccess, retryErrors, loadMore,popStack, f
     const  hydrateStack =  useCallback(async ()=>{
         if(stat && refetch){
             const {actual_cursor} = stat
-            
             try{
-
                 setRefetch(false)
                 dispatch(fetchStatsSuccess(stat.res))
                 dispatch(popStack(actual_cursor))
@@ -45,8 +43,7 @@ import { fetchStatsPending, fetchStatsSuccess, retryErrors, loadMore,popStack, f
             }
             catch(error){
                 setRefetch(false)
-            }
-           
+            } 
         }
         else{
             dispatch(fetchStatsPending())
@@ -54,10 +51,7 @@ import { fetchStatsPending, fetchStatsSuccess, retryErrors, loadMore,popStack, f
 
                 setRefetch(false)
                     await dispatch(fetchStat(next_cursor))
-                    // dispatch(retryErrors(errors))  
                     dispatch(loadMore(stackCursor))
-                
-         
             }
             catch(error){
                 setRefetch(false)

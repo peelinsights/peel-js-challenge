@@ -11,6 +11,13 @@
       "@constants/*": ["./src/constants/*"],
       "@hooks/*": ["./src/hooks/*"],
       "@util/*": ["./src/util/*"],
+      "@components/*": ["./src/components/*"],
+      "@display/*": ["./src/components/display/*"],
+      "@atoms/*": ["./src/components/atoms/*"],
+      "@molecules/*": ["./src/components/molecules/*"],
+      "@organisms/*": ["./src/components/organisms/*"],
+      "@styles/*": ["./src/styles/*"],
+      
     }
   },
   "exclude": ["node_modules", ".next", "config", "public"]
