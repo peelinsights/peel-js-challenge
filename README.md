@@ -17,7 +17,7 @@ Most times at Peel our web app has to deal with incredible big amounts of data t
 
 
 ### API
-http://app.peelinsights.com/api/test_stats/
+https://app.peelinsights.com/api/test_stats/
 
 This API calculates revenue for our demo project and it returns maximum the last 10 days, although it allows pagination through `?=cursor` so you can keep getting previous days. The response also includes the `next_cursor` you should use.
 Beware this API is been throttled to 20 requests per minute, consider that and any other bugs within your implementation. If you app gets throtlled you can look for the hold time in the headers with `Retry-After`.
@@ -65,6 +65,7 @@ JSON Response Example
 }
 ```
 
+Note for CORS issues: Make sure you are using *HTTPS* and that your domain is in localhost or localhost:port.
 
 ### DESIGNS
 Designs are stored in Figma. You should create an account to be able to see them.
